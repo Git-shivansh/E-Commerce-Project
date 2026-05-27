@@ -1,4 +1,4 @@
-package  com.example.demo.controller;
+package com.example.demo.controller;
 
 import com.example.demo.dto.*;
 import com.example.demo.service.AuthService;
@@ -15,7 +15,7 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/signup")
-    public ResponseEntity<AuthResponse> signup(@Valid @RequestBody SignupRequest req) {
+    public ResponseEntity<AuthResponse> signup(@Valid @RequestBody SignUpRequest req) {
         return ResponseEntity.ok(authService.signup(req));
     }
 
@@ -25,7 +25,7 @@ public class AuthController {
     }
 
     @PostMapping("/seller/signup")
-    public ResponseEntity<AuthResponse> sellerSignup(@Valid @RequestBody SignupRequest req) {
+    public ResponseEntity<AuthResponse> sellerSignup(@Valid @RequestBody SignUpRequest req) {
         return ResponseEntity.ok(authService.sellerSignup(req));
     }
 
