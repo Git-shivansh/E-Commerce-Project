@@ -2,8 +2,8 @@ package com.example.demo.controller;
 
 import com.example.demo.domain.AccountStatus;
 import com.example.demo.dto.ApiResponse;
-import com.example.demo.modal.Seller;
-import com.example.demo.modal.User;
+import com.example.demo.modals.Seller;
+import com.example.demo.modals.User;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.SellerService;
 import lombok.RequiredArgsConstructor;

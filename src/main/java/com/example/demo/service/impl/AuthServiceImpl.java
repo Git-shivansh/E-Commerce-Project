@@ -105,7 +105,7 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public AuthResponse sellerSignup(SignupRequest req) {
+    public AuthResponse sellerSignup(SignUpRequest req) {
 
         if (sellerRepo.existsByEmail(req.getEmail())) {
             throw new UserException("Seller email already registered");
