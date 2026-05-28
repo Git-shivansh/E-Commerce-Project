@@ -1,31 +1,61 @@
 package com.example.demo.modals;
 
+import com.example.demo.domain.AccountStatus;
+import com.example.demo.domain.USER_ROLE;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import lombok.*;
 
-import java.util.List;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.time.LocalDateTime;
 
 @Entity
-@Data
+@Table(name = "sellers")
+
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+
 public class Seller {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String sellerName;
+
     private String email;
+
+    @JsonIgnore
+    private String password;
+
+    private String mobile;
+
     private String businessName;
 
-    @OneToMany(mappedBy = "seller")
-    private List<Product> products;
+    private String businessDescription;
+
+    private String gstNumber;
+
+    private String bankAccountNumber;
+
+    private String ifscCode;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Address pickupAddress;
+
+    @Enumerated(EnumType.STRING)
+    private AccountStatus accountStatus =
+            AccountStatus.PENDING_VERIFICATION;
+
+    @Enumerated(EnumType.STRING)
+    private USER_ROLE role = USER_ROLE.ROLE_SELLER;
+
+    private boolean isActive = false;
+
+    private Double rating = 0.0;
+
+    @Column(updatable = false)
+    private LocalDateTime createdAt = LocalDateTime.now();
 }

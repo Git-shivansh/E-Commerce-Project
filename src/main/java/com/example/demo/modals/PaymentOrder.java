@@ -1,30 +1,46 @@
 package com.example.demo.modals;
 
+import com.example.demo.domain.PaymentStatus;
+import jakarta.persistence.*;
+import lombok.*;
 
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Data
+@Table(name = "payment_orders")
+
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+
 public class PaymentOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String paymentId;
-    private String method; // CARD, UPI, COD
-    private String status;
+    private double amount;
 
-    @OneToOne
-    private Order order;
+    @Enumerated(EnumType.STRING)
+    private PaymentStatus status = PaymentStatus.PENDING;
+
+    private String paymentMethod;
+
+    private String razorpayPaymentLinkId;
+
+    private String razorpayPaymentLinkReferenceId;
+
+    private String razorpayPaymentLinkStatus;
+
+    private String razorpayPaymentId;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @OneToMany
+    private Set<Order> orders = new HashSet<>();
 }

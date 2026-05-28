@@ -1,13 +1,15 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.exception.ResourceNotFoundException;
-import com.example.demo.modal.Category;
-import com.example.demo.repository.CategoryRepository;
-import com.example.demo.service.CategoryService;
-import lombok.RequiredArgsConstructor;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.example.demo.exception.ResourceNotFoundException;
+import com.example.demo.modals.Category;
+import com.example.demo.repository.CategoryRepository;
+import com.example.demo.service.CategoryService;
+
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor

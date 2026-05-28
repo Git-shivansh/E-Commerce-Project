@@ -1,31 +1,45 @@
 package com.example.demo.modals;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import lombok.*;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Data
+@Table(name = "reviews")
+
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+
 public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int rating;
-    private String comment;
-
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne
+    @JoinColumn(name = "product_id")
+    @JsonIgnore
     private Product product;
+
+    @Column(columnDefinition = "TEXT")
+    private String reviewText;
+
+    private double rating;
+
+    @ElementCollection
+    private List<String> productImages = new ArrayList<>();
+
+    @Column(updatable = false)
+    private LocalDateTime createdAt = LocalDateTime.now();
 }

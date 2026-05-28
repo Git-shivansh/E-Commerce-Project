@@ -1,15 +1,17 @@
 package com.example.demo.service.impl;
 
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.example.demo.exception.ResourceNotFoundException;
-import com.example.demo.modal.Seller;
-import com.example.demo.modal.SellerReport;
+import com.example.demo.modals.Seller;
+import com.example.demo.modals.SellerReport;
 import com.example.demo.repository.SellerReportRepository;
 import com.example.demo.repository.SellerRepository;
 import com.example.demo.service.SellerService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
-import java.util.List;
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor

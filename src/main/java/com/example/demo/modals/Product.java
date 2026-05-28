@@ -1,39 +1,65 @@
 package com.example.demo.modals;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 @Entity
-@Data
+@Table(name = "products")
+
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String title;
+
+    @Column(columnDefinition = "TEXT")
     private String description;
-    private Double price;
-    private int stock;
+
+    private double mrpPrice;
+
+    private double sellingPrice;
+
+    private int discountPercent;
+
+    private int quantity;
+
+    private String color;
+
+    private String sizes;
+
+    @ElementCollection
+    private List<String> images = new ArrayList<>();
 
     @ManyToOne
+    @JoinColumn(name = "category_id")
     private Category category;
 
     @ManyToOne
+    @JoinColumn(name = "seller_id")
+    @JsonIgnore
     private Seller seller;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-    private List<Review> reviews;
+    private double avgRating = 0.0;
+
+    private int numRatings = 0;
+
+    private int numReviews = 0;
+
+    private boolean isActive = true;
+
+    @Column(updatable = false)
+    private LocalDateTime createdAt = LocalDateTime.now();
 }

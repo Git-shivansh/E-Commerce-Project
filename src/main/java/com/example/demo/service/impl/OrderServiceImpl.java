@@ -1,28 +1,30 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.domain.OrderStatus;
-import com.example.demo.dto.OrderRequest;
-import com.example.demo.exception.OrderException;
-import com.example.demo.exception.ResourceNotFoundException;
-import com.example.demo.modal.Address;
-import com.example.demo.modal.Cart;
-import com.example.demo.modal.CartItem;
-import com.example.demo.modal.Order;
-import com.example.demo.modal.OrderItem;
-import com.example.demo.modal.Seller;
-import com.example.demo.modal.User;
-import com.example.demo.repository.AddressRepository;
-import com.example.demo.repository.CartRepository;
-import com.example.demo.repository.OrderRepository;
-import com.example.demo.service.OrderService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.domain.OrderStatus;
+import com.example.demo.dto.OrderRequest;
+import com.example.demo.exception.OrderException;
+import com.example.demo.exception.ResourceNotFoundException;
+import com.example.demo.modals.Address;
+import com.example.demo.modals.Cart;
+import com.example.demo.modals.CartItem;
+import com.example.demo.modals.Order;
+import com.example.demo.modals.OrderItem;
+import com.example.demo.modals.Seller;
+import com.example.demo.modals.User;
+import com.example.demo.repository.AddressRepository;
+import com.example.demo.repository.CartRepository;
+import com.example.demo.repository.OrderRepository;
+import com.example.demo.service.OrderService;
+
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor

@@ -2,7 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.dto.AddToCartRequest;
 import com.example.demo.dto.ApiResponse;
-import com.example.demo.modal.Cart;
+import com.example.demo.modals.Cart;
 import com.example.demo.service.AuthService;
 import com.example.demo.service.CartService;
 import lombok.RequiredArgsConstructor;

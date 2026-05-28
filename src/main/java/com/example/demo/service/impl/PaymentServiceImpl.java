@@ -1,19 +1,21 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.domain.PaymentStatus;
-import com.example.demo.exception.ResourceNotFoundException;
-import com.example.demo.modal.Order;
-import com.example.demo.modal.PaymentOrder;
-import com.example.demo.modal.User;
-import com.example.demo.repository.OrderRepository;
-import com.example.demo.repository.PaymentOrderRepository;
-import com.example.demo.service.PaymentService;
-import lombok.RequiredArgsConstructor;
+import java.util.HashSet;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.List;
+import com.example.demo.domain.PaymentStatus;
+import com.example.demo.exception.ResourceNotFoundException;
+import com.example.demo.modals.Order;
+import com.example.demo.modals.PaymentOrder;
+import com.example.demo.modals.User;
+import com.example.demo.repository.OrderRepository;
+import com.example.demo.repository.PaymentOrderRepository;
+import com.example.demo.service.PaymentService;
+
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor

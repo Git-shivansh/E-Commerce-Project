@@ -26,7 +26,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import java.util.Random;
 
 @Service
@@ -46,7 +45,7 @@ public class AuthServiceImpl implements AuthService {
     private final JavaMailSender mailer;
 
     @Override
-    public AuthResponse signup(SignupRequest req) {
+    public AuthResponse signup(SignUpRequest req) {
 
         if (userRepo.existsByEmail(req.getEmail())) {
             throw new UserException("Email already registered");

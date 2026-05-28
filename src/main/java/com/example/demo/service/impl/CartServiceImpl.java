@@ -1,21 +1,23 @@
 package com.example.demo.service.impl;
 
+import java.time.LocalDate;
+
+import org.springframework.stereotype.Service;
+
 import com.example.demo.dto.AddToCartRequest;
 import com.example.demo.exception.ResourceNotFoundException;
-import com.example.demo.modal.Cart;
-import com.example.demo.modal.CartItem;
-import com.example.demo.modal.Coupon;
-import com.example.demo.modal.Product;
-import com.example.demo.modal.User;
+import com.example.demo.modals.Cart;
+import com.example.demo.modals.CartItem;
+import com.example.demo.modals.Coupon;
+import com.example.demo.modals.Product;
+import com.example.demo.modals.User;
 import com.example.demo.repository.CartItemRepository;
 import com.example.demo.repository.CartRepository;
 import com.example.demo.repository.CouponRepository;
 import com.example.demo.repository.ProductRepository;
 import com.example.demo.service.CartService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor

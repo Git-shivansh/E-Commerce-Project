@@ -1,14 +1,16 @@
 package com.example.demo.service.impl;
 
+import org.springframework.stereotype.Service;
+
 import com.example.demo.exception.ResourceNotFoundException;
-import com.example.demo.modal.Product;
-import com.example.demo.modal.User;
-import com.example.demo.modal.Wishlist;
+import com.example.demo.modals.Product;
+import com.example.demo.modals.User;
+import com.example.demo.modals.Wishlist;
 import com.example.demo.repository.ProductRepository;
 import com.example.demo.repository.WishlistRepository;
 import com.example.demo.service.WishlistService;
+
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor

@@ -1,30 +1,42 @@
 package com.example.demo.modals;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
-@Data
+@Table(name = "addresses")
+
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+
 public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String street;
+    private String name;
+
+    private String streetAddress;
+
     private String city;
+
     private String state;
-    private String pincode;
+
+    private String zipCode;
+
     private String country;
 
+    private String mobile;
+
+    private boolean isDefault = false;
+
     @ManyToOne
+    @JoinColumn(name = "user_id")
+    @JsonIgnore
     private User user;
 }

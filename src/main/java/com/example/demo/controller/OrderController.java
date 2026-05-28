@@ -3,7 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.domain.OrderStatus;
 import com.example.demo.dto.ApiResponse;
 import com.example.demo.dto.OrderRequest;
-import com.example.demo.modal.Order;
+import com.example.demo.modals.Order;
 import com.example.demo.service.AuthService;
 import com.example.demo.service.OrderService;
 import lombok.RequiredArgsConstructor;

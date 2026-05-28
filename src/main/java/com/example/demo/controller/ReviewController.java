@@ -2,7 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.dto.ApiResponse;
 import com.example.demo.dto.ReviewRequest;
-import com.example.demo.modal.Review;
+import com.example.demo.modals.Review;
 import com.example.demo.service.AuthService;
 import com.example.demo.service.ReviewService;
 import lombok.RequiredArgsConstructor;
