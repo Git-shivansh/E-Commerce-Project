@@ -1,9 +1,9 @@
 package com.example.demo.service;
 
-import com.example.demo.modal.Coupon;
-
 import java.time.LocalDate;
 import java.util.List;
+
+import com.example.demo.modals.Coupon;
 
 public interface CouponService {
 

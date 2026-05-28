@@ -1,8 +1,8 @@
 package com.example.demo.service;
 
-import com.example.demo.modal.Category;
-
 import java.util.List;
+
+import com.example.demo.modals.Category;
 
 public interface CategoryService {
 

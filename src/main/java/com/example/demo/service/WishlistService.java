@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
-import com.example.demo.modal.User;
-import com.example.demo.modal.Wishlist;
+import com.example.demo.modals.User;
+import com.example.demo.modals.Wishlist;
 
 public interface WishlistService {
 

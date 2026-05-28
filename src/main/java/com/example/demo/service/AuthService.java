@@ -3,8 +3,8 @@ package com.example.demo.service;
 import com.example.demo.dto.AuthResponse;
 import com.example.demo.dto.LoginRequest;
 import com.example.demo.dto.SignUpRequest;
-import com.example.demo.modal.Seller;
-import com.example.demo.modal.User;
+import com.example.demo.modals.Seller;
+import com.example.demo.modals.User;
 
 public interface AuthService {
 

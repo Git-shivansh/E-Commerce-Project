@@ -1,10 +1,10 @@
 package com.example.demo.service;
 
-import com.example.demo.dto.ProductRequest;
-import com.example.demo.modal.Product;
-import com.example.demo.modal.Seller;
-
 import java.util.List;
+
+import com.example.demo.dto.ProductRequest;
+import com.example.demo.modals.Product;
+import com.example.demo.modals.Seller;
 
 public interface ProductService {
 

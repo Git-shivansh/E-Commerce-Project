@@ -1,10 +1,10 @@
 package com.example.demo.service;
 
-import com.example.demo.dto.ReviewRequest;
-import com.example.demo.modal.Review;
-import com.example.demo.modal.User;
-
 import java.util.List;
+
+import com.example.demo.dto.ReviewRequest;
+import com.example.demo.modals.Review;
+import com.example.demo.modals.User;
 
 public interface ReviewService {
 

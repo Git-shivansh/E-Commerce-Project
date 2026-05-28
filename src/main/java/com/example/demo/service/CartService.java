@@ -1,8 +1,8 @@
 package com.example.demo.service;
 
 import com.example.demo.dto.AddToCartRequest;
-import com.example.demo.modal.Cart;
-import com.example.demo.modal.User;
+import com.example.demo.modals.Cart;
+import com.example.demo.modals.User;
 
 public interface CartService {
 

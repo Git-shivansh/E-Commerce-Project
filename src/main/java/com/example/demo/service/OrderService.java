@@ -1,12 +1,12 @@
 package com.example.demo.service;
 
+import java.util.List;
+
 import com.example.demo.domain.OrderStatus;
 import com.example.demo.dto.OrderRequest;
-import com.example.demo.modal.Order;
-import com.example.demo.modal.Seller;
-import com.example.demo.modal.User;
-
-import java.util.List;
+import com.example.demo.modals.Order;
+import com.example.demo.modals.Seller;
+import com.example.demo.modals.User;
 
 public interface OrderService {
 

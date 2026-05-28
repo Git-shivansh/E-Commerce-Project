@@ -1,9 +1,9 @@
 package com.example.demo.service;
 
-import com.example.demo.modal.Seller;
-import com.example.demo.modal.SellerReport;
-
 import java.util.List;
+
+import com.example.demo.modals.Seller;
+import com.example.demo.modals.SellerReport;
 
 public interface SellerService {
 

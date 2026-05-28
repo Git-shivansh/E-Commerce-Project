@@ -1,10 +1,10 @@
 package com.example.demo.service;
 
-import com.example.demo.modal.Order;
-import com.example.demo.modal.PaymentOrder;
-import com.example.demo.modal.User;
-
 import java.util.List;
+
+import com.example.demo.modals.Order;
+import com.example.demo.modals.PaymentOrder;
+import com.example.demo.modals.User;
 
 public interface PaymentService {
 
